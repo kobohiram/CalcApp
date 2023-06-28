@@ -20,7 +20,7 @@
         android:id="@+id/editStr1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:inputType="numberDecimal"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -32,7 +32,7 @@
         android:id="@+id/editStr2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:inputType="numberDecimal"/>
 
     <Button
         android:id="@+id/button1"

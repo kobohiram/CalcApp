@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             message="計算できません"
 
         }finally{
-            value=0f
+
         }
         val intent = Intent(this,SecondActivity::class.java)
         intent.putExtra("VALUE",value)
