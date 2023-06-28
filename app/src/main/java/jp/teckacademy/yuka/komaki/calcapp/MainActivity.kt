@@ -34,50 +34,69 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     }
     private fun showTashizan(){
-        val str1:Float=binding.editStr1.text.toString().toFloat()
-        val str2:Float=binding.editStr2.text.toString().toFloat()
         var value:Float =0F
-            value=str1+str2
         var message="足し算計算結果"
+        try {
+            val str1:Float=binding.editStr1.text.toString().toFloat()
+            val str2:Float=binding.editStr2.text.toString().toFloat()
+            value=str1+str2
+        }catch (e:Exception){
+            message="計算できません"
+        }finally{
+        }
+
         val intent = Intent(this,SecondActivity::class.java)
         intent.putExtra("VALUE",value)
         intent.putExtra("MESSAGE",message)
         startActivity(intent)
     }
     private fun showHikizan(){
-        val str1:Float=binding.editStr1.text.toString().toFloat()
-        val str2:Float=binding.editStr2.text.toString().toFloat()
         var value:Float =0F
-        value=str1-str2
         var message="引き算計算結果"
+        try {
+            val str1:Float=binding.editStr1.text.toString().toFloat()
+            val str2:Float=binding.editStr2.text.toString().toFloat()
+            value=str1-str2
+        }catch (e:Exception){
+            message="計算できません"
+        }finally{
+        }
         val intent = Intent(this,SecondActivity::class.java)
         intent.putExtra("VALUE",value)
         intent.putExtra("MESSAGE",message)
         startActivity(intent)
     }
     private fun showKakezan(){
-        val str1:Float=binding.editStr1.text.toString().toFloat()
-        val str2:Float=binding.editStr2.text.toString().toFloat()
         var value:Float =0F
         var message="掛け算計算結果"
-        value=str1*str2
+
+        try {
+            val str1:Float=binding.editStr1.text.toString().toFloat()+0f
+            val str2:Float=binding.editStr2.text.toString().toFloat()+0f
+            value=str1*str2
+        }catch (e:Exception){
+            message="計算できません"
+        }finally{
+        }
         val intent = Intent(this,SecondActivity::class.java)
         intent.putExtra("VALUE",value)
         intent.putExtra("MESSAGE",message)
         startActivity(intent)
     }
     private fun showWarizan(){
-        val str1:Float=binding.editStr1.text.toString().toFloat()
-        val str2:Float=binding.editStr2.text.toString().toFloat()
+
         var value:Float =0F
         var message="割り算計算結果"
 
         try {
+            val str1:Float=binding.editStr1.text.toString().toFloat()+0f
+            val str2:Float=binding.editStr2.text.toString().toFloat()+0f
             value =str1/str2
         }catch (e:Exception){
-            println("エラーです")
-        }finally {
             message="計算できません"
+
+        }finally{
+            value=0f
         }
         val intent = Intent(this,SecondActivity::class.java)
         intent.putExtra("VALUE",value)
